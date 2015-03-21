@@ -1,36 +1,8 @@
-# teamring0c13
+# chal13
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
+Solution for challenge 13: Will output the flag in the terminal.
 
 ## Usage
+    
+    $ lein run <YOUR-PHPSESSID>
 
-FIXME: explanation
-
-    $ java -jar teamring0c13-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2015 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
