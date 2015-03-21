@@ -8,8 +8,9 @@
 (defn -main
   [session-token]
 
-  (let [response1 (client/get "http://ringzer0team.com/challenges/13"
-                              {:cookies {"PHPSESSID" {:value "5qk0lk5ovtbt89crs6lvvvhs15"}}})
+  (let [base-url "http://ringzer0team.com/challenges/13/"
+        response1 (client/get base-url
+                              {:cookies {"PHPSESSID" {:value session-token}}})
 
         hash (-> (:body response1)
                  html/html-snippet
@@ -20,8 +21,8 @@
                  (subs 3)
                  p512/sha512)
 
-        response2 (client/get (str "http://ringzer0team.com/challenges/13/" hash)
-                              {:cookies {"PHPSESSID" {:value "5qk0lk5ovtbt89crs6lvvvhs15"}}})
+        response2 (client/get (str base-url hash)
+                              {:cookies {"PHPSESSID" {:value session-token}}})
 
         flag (-> (:body response2)
                  html/html-snippet
@@ -29,7 +30,7 @@
                  first
                  :content
                  first
-                 )
-        ]
+                 )]
+
     (println flag)))
 
